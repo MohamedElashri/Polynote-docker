@@ -2,12 +2,12 @@ FROM alpine:3.10.3
 LABEL maintainer="Mohamed Elashri"
 
 
-ARG POLYNOTE_VERSION="0.4.2"
 
 WORKDIR /opt
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV SPARK_HOME /opt/spark
 ENV PYTHONUNBUFFERED TRUE
+ENV POLYNOTE_VERSION="0.4.2"
 
 
 # Install build dependencies for alpine
