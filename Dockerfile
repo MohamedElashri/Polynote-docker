@@ -27,7 +27,6 @@ RUN apk add --no-cache \
   python3 \
   tiff \
   zlib \
-. tar
 
 # Install libs
 RUN set -e; \
@@ -49,7 +48,8 @@ RUN set -e; \
     postgresql-dev \
     python3-dev \
     tiff-dev \
-    zlib-dev
+    zlib-dev \ 
+    tar
 
 # python packages
 RUN pip3 install --upgrade pip \
