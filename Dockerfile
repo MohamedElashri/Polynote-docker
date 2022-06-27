@@ -68,13 +68,13 @@ RUN pip3 install --upgrade pip \
       xarray    
 
 # Install polynote and scala
-RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
+RUN wget https://www.apache.org/dyn/closer.lua/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz \
 && tar -zxvf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
 && mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} spark \
 && mv spark /opt/spark \
 && rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 
-RUN wget -O- "https://www.scala-lang.org/files/archive/scala-${SCALA_VERSION}.tgz" \
+RUN wget -O- "https://www.scala-lang.org/files/archive/scala-3.1.3.tgz" \
     | tar xzf - -C /usr/local --strip-components=1
 
 RUN wget -c https://www.zlib.net/fossils/zlib-1.2.9.tar.gz -O - | tar -xz  \
@@ -86,7 +86,7 @@ ENV PATH="$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin"
 ENV PYSPARK_ALLOW_INSECURE_GATEWAY=1
 
 # Download and extract polynote
-RUN curl -Lk https://github.com/polynote/polynote/releases/download/${POLYNOTE_VERSION}/polynote-dist.tar.gz \
+RUN curl -Lk https://github.com/polynote/polynote/releases/download/0.4.2/polynote-dist.tar.gz \
   | tar -xzvpf -
 
 RUN ln -s `which pip` /opt/conda/bin/pip3
