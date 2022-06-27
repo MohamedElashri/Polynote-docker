@@ -57,7 +57,6 @@ RUN pip3 install --upgrade pip \
       jaydebeapi \
       jedi \
       jep \
-      matplotlib \
       numpy \
       pandas \
       pyspark \
