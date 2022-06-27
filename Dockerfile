@@ -8,7 +8,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV SPARK_HOME /opt/spark
 ENV PYTHONUNBUFFERED TRUE
 ENV SPARK_VERSION=3.3.0
-ENV HADOOP_VERSION=3.3.0
+ENV HADOOP_VERSION=3
 ENV SCALA_VERSION=3.1.3
 ENV POLYNOTE_VERSION=0.4.2
 
@@ -68,7 +68,7 @@ RUN pip3 install --upgrade pip \
       xarray    
 
 # Install polynote and scala
-RUN wget https://www.apache.org/dyn/closer.lua/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz \
+RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
 && tar -zxvf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
 && mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} spark \
 && mv spark /opt/spark \
