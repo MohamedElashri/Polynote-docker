@@ -1,4 +1,4 @@
-FROM alpine:3.10.3
+FROM alpine:3.15.4
 LABEL maintainer="Mohamed Elashri"
 
 
@@ -26,7 +26,8 @@ RUN apk add --no-cache \
   openjpeg \
   python3 \
   tiff \
-  zlib
+  zlib \
+. tar
 
 # Install libs
 RUN set -e; \
@@ -68,7 +69,7 @@ RUN pip3 install --upgrade pip \
       xarray    
 
 # Install polynote and scala
-RUN wget https://www.apache.org/dyn/closer.lua/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz \
+RUN wget https://dlcdn.apache.org/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz \
 && tar -zxvf spark-3.3.0-bin-hadoop3.tgz \
 && mv spark-3.3.0-bin-hadoop3 spark \
 && mv spark /opt/spark \
