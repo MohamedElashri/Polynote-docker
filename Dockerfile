@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM python:3-alpine
 LABEL maintainer="Mohamed Elashri"
 
 
