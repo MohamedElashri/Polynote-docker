@@ -52,4 +52,5 @@ RUN  rm -rf \
 COPY config.yml ./polynote/config.yml
 
 EXPOSE 8192
-CMD bash polynote/polynote.py
+
+CMD polynote/polynote.py
